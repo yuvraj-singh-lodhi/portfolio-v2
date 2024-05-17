@@ -1,10 +1,7 @@
 import { BiSolidEnvelope } from 'react-icons/bi';
 import {
-  SiApifox,
-  SiCloudflare,
   SiCsharp,
   SiCss3,
-  SiDocker,
   SiDotnet,
   SiGit,
   SiGithub,
@@ -18,7 +15,6 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
-  SiPostgresql,
   SiPostman,
   SiPrisma,
   SiReact,
@@ -27,8 +23,6 @@ import {
   SiTypescript,
   SiVercel,
   SiVisualstudiocode,
-  SiX,
-  SiXdadevelopers,
 } from 'react-icons/si';
 import { TbApi } from "react-icons/tb";
 
@@ -83,7 +77,7 @@ export const skillsCommand = [
   {
     title: 'javascript',
     Icon: SiJavascript,
-    level: 65,
+    level: 75,
   },
   {
     title: 'Asp .Net',
@@ -103,7 +97,7 @@ export const skillsCommand = [
   {
     title: 'CSS',
     Icon: SiCss3,
-    level: 75,
+    level: 80,
   },
   
   {
@@ -184,7 +178,7 @@ export const projectsCommand = [
     title: 'Auto Responder',
     tech: [SiCsharp, SiDotnet,SiMicrosoftsqlserver, SiGmail,TbApi],
     link: '',
-    cover: '',
+    cover: '/default-image.png',
     background: 'bg-stone-400',
   },
 ];
@@ -199,7 +193,7 @@ export const contactCommand = [
   {
     title: 'LinkedIn',
     icon: SiLinkedin,
-    username: '@bishalmoktan',
+    username: '@yuvrajsinghlodhi',
     link: 'https://www.linkedin.com/in/yuvrajsinghlodhi/',
   },
   {

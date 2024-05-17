@@ -15,9 +15,9 @@ const Projects = () => {
         {projectsCommand.map((project, index) => {
           return (
             <Link href={project.link} key={index} target="_blank">
-              <div className={cn('p-3 rounded-md', project.background)}>
+              <div className={cn('p-5 rounded-md', project.background)}>
                 <DirectionAwareHover
-                     imageUrl={project.cover || '/default-image.png'} // Replace '/default-cover.jpg' with your default cover image path
+                  imageUrl={project.cover}
                   className="w-full"
                 >
                   <div className="space-y-4 bg-blend-darken">
