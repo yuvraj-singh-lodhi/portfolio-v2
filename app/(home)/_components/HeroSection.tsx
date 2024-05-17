@@ -16,7 +16,7 @@ export default function HeroSection() {
             "Experienced individual with a strong background in development tools and coding languages, seeking a Software Developer position to contribute my skills and experience."
           }
         </p>
-        <Link href={"mailto:yuvrajsinghlodhi30@gmail.com"} className="inline-block group -rotate-[3deg]">
+        <Link href={"https://mail.google.com/mail/?view=cm&to=yuvrajsinghlodhi@gmail.com"} className="inline-block group -rotate-[3deg]" target="_blank">
             <div>
                 <h1 className="text-3xl font-bold group-hover:text-green-400 transition-all ">Contact Me 📬</h1>
                 <div className="w-40 h-2 rounded bg-green-500"></div>
@@ -36,7 +36,7 @@ export default function HeroSection() {
           <div className=" glow absolute top-[40%] right-1/2 -z-10"></div>
           <div className="absolute bottom-5 sm:bottom-14 left-0 sm:-left-10 rotate-[30deg]">
           <MovingBorderBtn borderRadius="0.5rem" className="p-3 font-semibold">
-            <p>💼 Available for work</p>
+            <Link href="https://www.upwork.com/freelancers/~013db6bf3f09f5b055?s=1110580755107926016" target="_black"><p>💼 Hire me</p></Link>
           </MovingBorderBtn>
         </div>
       </div>
