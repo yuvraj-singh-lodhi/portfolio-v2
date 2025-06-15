@@ -26,6 +26,7 @@ const PLAYLIST_ID = process.env.NEXT_PUBLIC_SPOTIFY_PLAYLIST_ID || "";
 if (!CLIENT_ID || !CLIENT_SECRET || !PLAYLIST_ID) {
   throw new Error("Spotify credentials are not set in environment variables.");
 }
+
 const SpotifyPlayer = () => {
   const [tracks, setTracks] = useState<Track[]>([]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState<number>(0);
@@ -99,7 +100,7 @@ const SpotifyPlayer = () => {
   const currentTrack = tracks[currentTrackIndex];
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-full max-w-xs bg-black/90 text-white rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm">
+    <div className="fixed bottom-2 left-2 right-2 sm:right-4 sm:left-auto z-50 w-full sm:max-w-sm bg-black/90 text-white rounded-xl shadow-xl overflow-hidden backdrop-blur-md">
       <div className="flex justify-between items-center px-4 py-2 border-b border-white/10">
         <h2 className="text-sm font-semibold tracking-wide">Now Playing</h2>
         <button
@@ -111,20 +112,20 @@ const SpotifyPlayer = () => {
       </div>
 
       {!collapsed && (
-        <div className="p-3 space-y-2">
+        <div className="px-3 py-2 space-y-2">
           {tracks.length === 0 ? (
             <p className="text-xs text-center">Loading...</p>
           ) : (
-            <div className="max-h-52 overflow-y-auto space-y-1 pr-1">
+            <div className="max-h-52 overflow-y-auto pr-1 custom-scrollbar">
               {tracks.map((track, index) => (
                 <div
                   key={track.id}
                   onClick={() => setCurrentTrackIndex(index)}
-                  className={`flex justify-between items-center px-2 py-1 rounded-md cursor-pointer hover:bg-white/10 transition text-xs ${
+                  className={`flex justify-between items-center gap-3 px-2 py-1 rounded-md cursor-pointer hover:bg-white/10 transition text-xs ${
                     currentTrack?.id === track.id ? "bg-white/10" : ""
                   }`}
                 >
-                  <div className="truncate">
+                  <div className="flex-1 min-w-0">
                     <p className="font-medium truncate">{track.name}</p>
                     <p className="text-gray-400 truncate">
                       {track.artists[0]?.name}
@@ -133,8 +134,8 @@ const SpotifyPlayer = () => {
                   {track.album.images[2] && (
                     <img
                       src={track.album.images[2].url}
-                      alt=""
-                      className="w-8 h-8 rounded object-cover"
+                      alt="cover"
+                      className="w-8 h-8 rounded object-cover shrink-0"
                     />
                   )}
                 </div>
@@ -154,18 +155,18 @@ const SpotifyPlayer = () => {
             loading="lazy"
             className="rounded-none"
           ></iframe>
-          <div className="flex justify-center gap-3 items-center py-1">
+          <div className="flex justify-center gap-4 items-center py-2 px-4 sm:px-3">
             <button
               onClick={handlePrev}
-              className="rounded-md p-1 hover:bg-white/10 transition"
+              className="rounded-full p-2 hover:bg-white/10 transition"
             >
-              <SkipBack size={16} className="text-white" />
+              <SkipBack size={18} />
             </button>
             <button
               onClick={handleNext}
-              className="rounded-md p-1 hover:bg-white/10 transition"
+              className="rounded-full p-2 hover:bg-white/10 transition"
             >
-              <SkipForward size={16} className="text-white" />
+              <SkipForward size={18} />
             </button>
           </div>
         </div>
