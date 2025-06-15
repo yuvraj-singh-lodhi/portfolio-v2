@@ -34,7 +34,7 @@ const Navbar = ({
       {/* Logo / Name */}
       <Link href="/" className="flex items-center gap-2">
         <h1 className="text-2xl font-bold text-white hover:text-green-400 transition">
-          Yuvraj Singh Lodhi 👨🏻‍💻
+          Yuvraj Singh Lodhi 
         </h1>
       </Link>
 
