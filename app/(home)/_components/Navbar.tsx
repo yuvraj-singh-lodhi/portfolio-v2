@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { FaCode } from "react-icons/fa6";
@@ -14,36 +14,42 @@ const Navbar = ({
   const socials = [
     {
       Link: "https://github.com/yuvraj-singh-lodhi",
-      Label: "Github",
+      Label: "GitHub",
       Icon: SiGithub,
     },
     {
       Link: "https://www.linkedin.com/in/yuvrajsinghlodhi/",
-      Label: "Linkedin",
+      Label: "LinkedIn",
       Icon: SiLinkedin,
     },
   ];
+
   return (
     <nav
       className={cn(
-        "py-8 flex items-center justify-between animate-move-down",
+        "py-6 px-4 flex items-center justify-between w-full max-w-7xl mx-auto animate-move-down",
         className
       )}
     >
-     <Link href="/"><h1 className="text-2xl font-bold underline underline-offset-8 decoration-green-500 -rotate-2">
-      Yuvraj Singh Lodhi 👨🏻‍💻
-      </h1>
+      {/* Logo / Name */}
+      <Link href="/" className="flex items-center gap-2">
+        <h1 className="text-2xl font-bold text-white hover:text-green-400 transition">
+          Yuvraj Singh Lodhi 👨🏻‍💻
+        </h1>
       </Link>
-      <ActionTooltip label="developer mode" side="bottom" link="/developer">
-        <FaCode className="size-8" />
-      </ActionTooltip>
 
+      {/* Developer mode icon */}
       <div className="flex items-center gap-5">
+        <ActionTooltip label="Developer Mode" side="bottom" link="/developer">
+          <FaCode className="size-6 text-white hover:text-green-400 transition" />
+        </ActionTooltip>
+
+        {/* Social icons */}
         {socials.map((social, index) => {
           const Icon = social.Icon;
           return (
-            <Link href={social.Link} aria-label={social.Label} key={index}>
-              <Icon className="size-5 hover:scale-125 transition-all" />
+            <Link href={social.Link} aria-label={social.Label} key={index} target="_blank">
+              <Icon className="size-5 text-white hover:text-green-400 hover:scale-110 transition" />
             </Link>
           );
         })}
@@ -51,4 +57,5 @@ const Navbar = ({
     </nav>
   );
 };
+
 export default Navbar;

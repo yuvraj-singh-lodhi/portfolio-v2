@@ -1,16 +1,18 @@
 'use client';
-import { MovingBorderBtn } from '@/components/ui/moving-border';
+
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { MovingBorderBtn } from '@/components/ui/moving-border';
 import BioLoading from './bio-loading';
 
 const Bio = () => {
   const [data, setData] = useState<GithubResponse | null>(null);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const getBio = async () => {
       setLoading(true);
@@ -19,8 +21,8 @@ const Bio = () => {
           'https://api.github.com/users/yuvraj-singh-lodhi'
         );
         setData(res.data);
-      } catch (error: any) {
-        console.log(error);
+      } catch (error) {
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -28,62 +30,63 @@ const Bio = () => {
     getBio();
   }, []);
 
-  if (loading) {
-    return <BioLoading />;
-  }
+  if (loading) return <BioLoading />;
 
   return (
-    <div>
+    <div className="space-y-6 max-w-2xl mx-auto">
       {data && (
-        <div className="space-y-4">
-          <div className="flex gap-4 items-center">
+        <>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             <MovingBorderBtn borderRadius="100%">
               <Image
                 src={data.avatar_url}
-                alt="bishal moktan"
-                width={'150'}
-                height={'150'}
-                className="rounded-full"
+                alt="Yuvraj Singh Lodhi"
+                width={120}
+                height={120}
+                className="rounded-full object-cover"
               />
             </MovingBorderBtn>
-            <div>
-              <div className="flex gap-2">
-                <div>
-                  <p className="text-2xl">{data.name}</p>
-                  <p className="text-zinc-300">A fullstack developer</p>
-                </div>
-                <BsFillPatchCheckFill className="size-8 text-blue-500" />
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2">
+                <h1 className="text-2xl font-semibold">{data.name}</h1>
+                <BsFillPatchCheckFill className="text-blue-500 size-5" />
               </div>
+              <p className="text-sm text-muted-foreground">
+                Full Stack Developer
+              </p>
             </div>
           </div>
-          <div className="text-xl">{data.bio}</div>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2">
-            <div className="flex gap-2 text-yellow-500">
-              <SiGithub className="size-6" />
-              <span className="text-lg"> Github</span>
+
+          <p className="text-sm text-zinc-300">{data.bio}</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex items-center gap-2 text-sm text-zinc-400">
+              <SiGithub className="text-xl text-yellow-500" />
+              <span className="hidden sm:inline">GitHub:</span>
               <Link
                 href={data.html_url}
-                className="text-xl text-blue-500"
                 target="_blank"
+                className="text-blue-400 hover:underline"
               >
                 @{data.login}
               </Link>
             </div>
-            <div className="flex gap-2 text-yellow-500">
-              <SiLinkedin className="size-6" />
-              <span className="text-lg"> Linkedin</span>
+            <div className="flex items-center gap-2 text-sm text-zinc-400">
+              <SiLinkedin className="text-xl text-yellow-500" />
+              <span className="hidden sm:inline">LinkedIn:</span>
               <Link
-                href={'https://www.linkedin.com/in/yuvrajsinghlodhi/'}
-                className="text-xl text-blue-500"
+                href="https://www.linkedin.com/in/yuvrajsinghlodhi/"
                 target="_blank"
+                className="text-blue-400 hover:underline"
               >
                 @yuvrajsinghlodhi
               </Link>
             </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
 };
+
 export default Bio;

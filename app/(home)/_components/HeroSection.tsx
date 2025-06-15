@@ -1,45 +1,44 @@
 import { MovingBorderBtn } from "@/components/ui/moving-border";
-import Link  from "next/link";
+import ContactDropdown from "@/app/(home)/_components/ContactDropdown";
+import Link from "next/link";
 import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="min-h-[60vh] flex flex-col-reverse gap-16 lg:flex-row items-center justify-between">
-      <div className="space-y-10 text-center lg:text-left"> 
-        <h1 className="text-4xl lg:text-7xl font-bold">
-          Nice to meet you! 👋
+    <section className="relative min-h-[80vh] w-full px-6 py-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+      {/* === Left Content === */}
+      <div className="space-y-8 text-center lg:text-left max-w-xl">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
+          Nice to meet you!
           <br />
-          <span className=" underline underline-offset-8 decoration-green-500">{"I'm Yuvraj."}</span>
+          <span className="text-green-400">I&#39;m Yuvraj.</span>
         </h1>
-        <p className="md:w-96 text-lg text-gray-300">
-          {
-            "Experienced individual with a strong background in development tools and coding languages, seeking a Software Developer position to contribute my skills and experience."
-          }
+
+        <p className="text-lg sm:text-xl text-gray-400">
+          Full Stack Developer specializing in .NET, React, Django, and scalable
+          backend systems.
         </p>
-        <Link href={"https://mail.google.com/mail/?view=cm&to=yuvrajsinghlodhi@gmail.com"} className="inline-block group -rotate-[3deg]" target="_blank">
-            <div>
-                <h1 className="text-3xl font-bold group-hover:text-green-400 transition-all ">Contact Me 📬</h1>
-                <div className="w-40 h-2 rounded bg-green-500"></div>
-                <div className="w-40 h-2 rounded bg-indigo-500 translate-x-2"></div>
-            </div>
-        </Link>
-      </div>
-      <div className="w-72 h-72 space-y-3 -rotate-[30deg] relative">
-          <div className="flex gap-3 translate-x-8">
-            <div className="w-32 h-32 rounded-2xl bg-green-500"></div>
-            <div className="w-32 h-32 rounded-full bg-indigo-500"></div>
-          </div>
-          <div className="flex gap-3 -translate-x-8">
-            <div className="w-32 h-32 rounded-2xl bg-indigo-500"></div>
-            <div className="w-32 h-32 rounded-full bg-green-500"></div>
-          </div>
-          <div className=" glow absolute top-[40%] right-1/2 -z-10"></div>
-          <div className="absolute bottom-5 sm:bottom-14 left-0 sm:-left-10 rotate-[30deg]">
-          <MovingBorderBtn borderRadius="0.5rem" className="p-3 font-semibold">
-            <Link href="https://www.upwork.com/freelancers/~013db6bf3f09f5b055?s=1110580755107926016" target="_black"><p>💼 Hire me</p></Link>
-          </MovingBorderBtn>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start pt-2">
+          <ContactDropdown />
         </div>
       </div>
-    </div>
+
+      {/* === Right Decoration === */}
+      <div className="relative w-72 h-72 lg:w-80 lg:h-80 -rotate-[25deg]">
+        <div className="flex gap-4 translate-x-8 mb-3">
+          <div className="w-32 h-32 rounded-2xl bg-green-500 shadow-xl" />
+          <div className="w-32 h-32 rounded-full bg-indigo-500 shadow-xl" />
+        </div>
+        <div className="flex gap-4 -translate-x-8">
+          <div className="w-32 h-32 rounded-2xl bg-indigo-500 shadow-xl" />
+          <div className="w-32 h-32 rounded-full bg-green-500 shadow-xl" />
+        </div>
+
+        {/* Subtle Glow */}
+        <div className="absolute top-[40%] right-1/2 -z-10 blur-2xl w-40 h-40 rounded-full bg-green-400 opacity-20"></div>
+      </div>
+    </section>
   );
 }

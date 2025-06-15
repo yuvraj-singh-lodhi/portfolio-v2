@@ -3,25 +3,24 @@ import { Progress } from '@/components/ui/progress';
 
 const Skills = () => {
   return (
-    <div className="space-y-8 w-[90%] mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-[90%] mx-auto">
       {skillsCommand.map((skill, index) => {
         const Icon = skill.Icon;
         return (
-          <div key={index} className="space-y-1">
-            <div className="flex justify-between">
-              <div className="flex gap-2">
-                <Icon className="size-8" />
-                <p className="text-xl">{skill.title}</p>
+          <div key={index} className="space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-sm text-neutral-800 dark:text-white">
+                <Icon className="size-5 opacity-80" />
+                <span>{skill.title}</span>
               </div>
-              <div className="text-xl">{skill.level}%</div>
+              <span className="text-xs text-neutral-500">{skill.level}%</span>
             </div>
-            <div>
-              <Progress value={skill.level} />
-            </div>
+            <Progress value={skill.level} className="h-1 bg-neutral-200 dark:bg-neutral-700" />
           </div>
         );
       })}
     </div>
   );
 };
+
 export default Skills;

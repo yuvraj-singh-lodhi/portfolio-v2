@@ -1,7 +1,8 @@
-import { BiSolidEnvelope } from 'react-icons/bi';
+import { BiSolidEnvelope } from "react-icons/bi";
 import {
   SiCsharp,
   SiCss3,
+  SiDjango,
   SiDotnet,
   SiGit,
   SiGithub,
@@ -15,6 +16,7 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiPostgresql,
   SiPostman,
   SiPrisma,
   SiReact,
@@ -23,6 +25,8 @@ import {
   SiTypescript,
   SiVercel,
   SiVisualstudiocode,
+  SiNginx,
+  SiPython,
 } from 'react-icons/si';
 import { TbApi } from "react-icons/tb";
 
@@ -54,152 +58,136 @@ export const helpCommand = [
 ];
 
 export const skillsCommand = [
-  {
-    title: 'React',
-    Icon: SiReact,
-    level: 80,
-  },
-  {
-    title: 'Nextjs',
-    Icon: SiNextdotjs,
-    level: 50,
-  },
-  {
-    title: 'Nodejs',
-    Icon: SiNodedotjs,
-    level: 50,
-  },
-  {
-    title: 'CSharp',
-    Icon: SiCsharp,
-    level: 75,
-  },
-  {
-    title: 'javascript',
-    Icon: SiJavascript,
-    level: 75,
-  },
-  {
-    title: 'Asp .Net',
-    Icon: SiDotnet, 
-    level: 75,
-  },
-  {
-    title: 'Tailwind',
-    Icon: SiTailwindcss,
-    level: 85,
-  },
-  {
-    title: 'GSAP',
-    Icon: SiGreensock,
-    level: 75,
-  },
-  {
-    title: 'CSS',
-    Icon: SiCss3,
-    level: 80,
-  },
-  
-  {
-    title: 'MongoDB',
-    Icon: SiMongodb,
-    level: 70,
-  },
-  {
-    title: 'Sql Server',
-    Icon: SiMicrosoftsqlserver,
-    level: 75,
-  },
-  {
-    title: 'MySql',
-    Icon: SiMysql,
-    level: 75,
-  },
-  {
-    title: 'Git & GitHub',
-    Icon: SiGit,SiGithub,
-    level: 85,
-  },
-  {
-    title: 'Postman',
-    Icon: SiPostman ,
-    level: 60,
-  },
-  {
-    title: 'Vercel',
-    Icon: SiVercel ,
-    level: 60,
-  },
+  { title: 'React.js', Icon: SiReact, level: 85 },
+  { title: 'Next.js', Icon: SiNextdotjs, level: 75 },
+  { title: 'Node.js', Icon: SiNodedotjs, level: 70 },
+  { title: 'TypeScript', Icon: SiTypescript, level: 75 },
+  { title: 'JavaScript', Icon: SiJavascript, level: 80 },
+  { title: 'C#', Icon: SiCsharp, level: 85 },
+  { title: 'ASP.NET Core', Icon: SiDotnet, level: 85 },
+  { title: 'Django', Icon: SiDjango, level: 75 },
+  { title: 'Python', Icon: SiPython, level: 70 },
+  { title: 'Tailwind CSS', Icon: SiTailwindcss, level: 85 },
+  { title: 'GSAP', Icon: SiGreensock, level: 75 },
+  { title: 'CSS3', Icon: SiCss3, level: 80 },
+  { title: 'HTML5', Icon: SiHtml5, level: 80 },
+
+  { title: 'MySQL', Icon: SiMysql, level: 80 },
+  { title: 'PostgreSQL', Icon: SiPostgresql, level: 70 },
+  { title: 'SQL Server', Icon: SiMicrosoftsqlserver, level: 80 },
+  { title: 'MongoDB', Icon: SiMongodb, level: 65 },
+  { title: 'Prisma ORM', Icon: SiPrisma, level: 60 },
+
+  { title: 'Postman', Icon: SiPostman, level: 70 },
+  { title: 'RESTful APIs', Icon: TbApi, level: 85 },
+  { title: 'Git', Icon: SiGit, level: 80 },
+  { title: 'GitHub', Icon: SiGithub, level: 80 },
+  { title: 'Vercel', Icon: SiVercel, level: 70 },
+  { title: 'VS Code', Icon: SiVisualstudiocode, level: 90 },
+  { title: 'Nginx', Icon: SiNginx, level: 65 },
 ];
 
 export const projectsCommand = [
   {
-    title: 'Portfolio',
-    tech: [SiNextdotjs, SiTailwindcss, SiPrisma, SiMongodb],
-    link: '#',
-    cover: '/project-1.png',
-    background: 'bg-fuchsia-800',
+    title: "The Fortress in Pixels",
+    tech: [SiNextdotjs, SiCsharp, SiDotnet, SiPostgresql],
+    link: "",
+    cover: "",
+    background: "bg-purple-800",
+    description:
+      "A digital asset management system showcasing historical landmarks. Built with ASP.NET Core and Next.js, featuring secure REST APIs and PostgreSQL integration.",
   },
   {
-    title: 'GameHUb',
-    tech: [SiReact, SiSass,SiCsharp],
-    link: '',
-    cover: '/project-2.png',
-    background: 'bg-cyan-600',
+    title: "BlackWilbur",
+    tech: [SiReact, SiDjango, SiMysql],
+    link: "https://www.blackwilbur.com/",
+    cover: "/blackwilbur.png",
+    background: "bg-black",
+    description:
+      "A full-stack e-commerce platform supporting 500+ daily users. Features include authentication, Django REST APIs, and deployment via VPS with Nginx.",
   },
   {
-    title: 'coffee shop website',
-    tech: [SiReact, SiSass,SiVercel],
-    link: 'https://coffeeshopwebsite.vercel.app/',
-    cover: '/project-3.png',
-    background: 'bg-amber-700',
+    title: "Axoraa Landing Page",
+    tech: [SiReact, SiTypescript, SiTailwindcss],
+    link: "https://axoraa.vercel.app/",
+    cover: "/Axoraa.png",
+    background: 'bg-[#4D2C5E]',
+    description:
+      "A high-converting and responsive landing page built with React (Vite), TypeScript, Tailwind CSS, and GSAP animations. Features smooth micro-interactions and a custom demo booking form integrated with EmailJS, improving engagement and automating 100+ monthly confirmations.",
   },
   {
-    title: 'Password-Manager',
-    tech: [SiHtml5,SiJavascript, SiCss3],
-    link: 'https://yuvraj-singh-lodhi.github.io/Password-Manager/',
-    cover: '/project-4.png',
-    background: 'bg-stone-500',
+  title: 'ClientConnect CRM Suite',
+  tech: [SiCsharp, SiDotnet, SiMicrosoftsqlserver],
+  link: '', 
+  cover: '', 
+  background: 'bg-[#1F2937]',
+  description:
+    'A secure internal CRM platform built using ASP.NET MVC and Web APIs to streamline CSR call reporting. Features included call playback, downloadable call logs, export to Excel/PDF, and comprehensive customer detail views. Optimized for SQL Server-backed performance with role-based access, advanced filtering, and detailed audit trails.',
   },
   {
-    title: 'Bubble Game',
-    tech: [SiHtml5,SiJavascript, SiCss3],
-    link: 'https://yuvraj-singh-lodhi.github.io/Bubble_Game/',
-    cover: '/project-5.png',
-    background: 'bg-indigo-500',
+    title: "Coffee Shop Website",
+    tech: [SiReact, SiSass, SiVercel],
+    link: "https://coffeeshopwebsite.vercel.app/",
+    cover: "/project-3.png",
+    background: "bg-amber-700",
+    description:
+      "A visually appealing frontend website for a coffee shop built with React and Sass. Fully responsive and deployed on Vercel.",
   },
   {
-    title: 'VS code Extension React Snippets Suite',
-    tech: [SiVisualstudiocode,SiTypescript],
-    link: 'https://marketplace.visualstudio.com/items?itemName=YuvrajSinghLodhi.react-snippets-pack',
-    cover: '/project-6.png',
-    background: 'bg-stone-400',
-  },{
-    title: 'Auto Responder',
-    tech: [SiCsharp, SiDotnet,SiMicrosoftsqlserver, SiGmail,TbApi],
-    link: '',
-    cover: '/default-image.png',
-    background: 'bg-stone-400',
+    title: "Password Manager",
+    tech: [SiHtml5, SiJavascript, SiCss3],
+    link: "https://yuvraj-singh-lodhi.github.io/Password-Manager/",
+    cover: "/project-4.png",
+    background: "bg-stone-500",
+    description:
+      "A simple and secure password manager using vanilla JavaScript and browser local storage. Built for practicing DOM manipulation and UI design.",
+  },
+  {
+    title: "Bubble Game",
+    tech: [SiHtml5, SiJavascript, SiCss3],
+    link: "https://yuvraj-singh-lodhi.github.io/Bubble_Game/",
+    cover: "/project-5.png",
+    background: "bg-indigo-500",
+    description:
+      "A fun, interactive web-based bubble pop game built using HTML, CSS, and JavaScript. Great for demonstrating event handling and game loops.",
+  },
+  {
+    title: "VS Code Extension: React Snippets Suite",
+    tech: [SiVisualstudiocode, SiTypescript],
+    link: "https://marketplace.visualstudio.com/items?itemName=YuvrajSinghLodhi.react-snippets-pack",
+    cover: "/project-6.png",
+    background: "bg-stone-400",
+    description:
+      "A productivity-enhancing VS Code extension that provides React and TypeScript code snippets to speed up development.",
+  },
+  {
+    title: "Auto Responder",
+    tech: [SiCsharp, SiDotnet, SiMicrosoftsqlserver, SiGmail, TbApi],
+    link: "",
+    cover: "/default-image.png",
+    background: "bg-stone-400",
+    description:
+      "A background service that connects to Gmail API, processes 10K+ emails monthly, and stores data into SQL Server. Built with .NET Worker Services.",
   },
 ];
 
 export const contactCommand = [
   {
-    title: 'Github',
+    title: "Github",
     icon: SiGithub,
-    username: '@yuvraj-singh-lodhi',
-    link: 'https://github.com/yuvraj-singh-lodhi',
+    username: "@yuvraj-singh-lodhi",
+    link: "https://github.com/yuvraj-singh-lodhi",
   },
   {
-    title: 'LinkedIn',
+    title: "LinkedIn",
     icon: SiLinkedin,
-    username: '@yuvrajsinghlodhi',
-    link: 'https://www.linkedin.com/in/yuvrajsinghlodhi/',
+    username: "@yuvrajsinghlodhi",
+    link: "https://www.linkedin.com/in/yuvrajsinghlodhi/",
   },
   {
-    title: 'Email',
+    title: "Email",
     icon: BiSolidEnvelope,
-    username: 'yuvrajsinghlodhi30@gmail.com',
-    link: 'mailto:yuvrajsinghlodhi30@gmail.com',
+    username: "yuvrajsinghlodhi30@gmail.com",
+    link: "mailto:yuvrajsinghlodhi30@gmail.com",
   },
 ];
