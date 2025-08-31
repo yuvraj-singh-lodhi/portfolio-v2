@@ -1,4 +1,38 @@
 import { BiSolidEnvelope } from "react-icons/bi";
+
+// data.ts
+export interface ComponentInfo {
+  id: string;
+  name: string;
+  description: string;
+  about?: string;
+  builtWith: string[];
+  npmPackage: string;
+  dependencies?: string[];
+  envVariables?: string[];
+  codeSnippet: string;
+  fullCode: string;
+  filename?: string;
+  links?: Array<{
+    label: string;
+    url: string;
+  }>;
+  props: Array<{
+    name: string;
+    type: string;
+    default?: string;
+    description: string;
+    required?: boolean;
+  }>;
+  examples?: Array<{
+    title: string;
+    code: string;
+    description?: string;
+    preview?: React.ReactNode;
+  }>;
+}
+
+
 import {
   SiCsharp,
   SiCss3,
@@ -189,5 +223,150 @@ export const contactCommand = [
     icon: BiSolidEnvelope,
     username: "yuvrajsinghlodhi30@gmail.com",
     link: "mailto:yuvrajsinghlodhi30@gmail.com",
+  },
+];
+
+
+export const components: ComponentInfo[] = [
+  {
+    id: "spotify-player",
+    name: "SpotifyPlayer",
+    description: "A fully interactive Spotify playlist player with track preview, controls, and theme support.",
+    about: "The SpotifyPlayer component is built on top of the Spotify Web API. It provides a fully interactive playlist player with track preview, controls, and theme support. Perfect for embedding Spotify playlists in your React applications.",
+    builtWith: ["React", "TypeScript", "TailwindCSS", "Spotify API"],
+    npmPackage: "my-spotify-player",
+    dependencies: ["react-copy-to-clipboard", "react-icons", "react-feather"],
+    envVariables: [
+      "NEXT_PUBLIC_SPOTIFY_CLIENT_ID",
+      "NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET", 
+      "NEXT_PUBLIC_SPOTIFY_PLAYLIST_ID"
+    ],
+    filename: "components/spotify-player.tsx",
+    links: [
+      {
+        label: "Spotify Web API",
+        url: "https://developer.spotify.com/documentation/web-api"
+      }
+    ],
+    codeSnippet: `import SpotifyPlayer from "my-spotify-player";
+
+<SpotifyPlayer
+  clientId="YOUR_SPOTIFY_CLIENT_ID"
+  clientSecret="YOUR_SPOTIFY_CLIENT_SECRET"
+  playlistId="YOUR_PLAYLIST_ID"
+  theme="dark"
+/>`,
+    fullCode: `"use client";
+import React, { useEffect, useState } from "react";
+import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+import { SkipBack, SkipForward } from "react-feather";
+
+interface Artist {
+  name: string;
+}
+
+interface Album {
+  images: { url: string }[];
+}
+
+interface Track {
+  id: string;
+  name: string;
+  artists: Artist[];
+  album: Album;
+}
+
+interface SpotifyPlayerProps {
+  clientId: string;
+  clientSecret: string;
+  playlistId: string;
+  theme?: 'light' | 'dark';
+  centeredPreview?: boolean;
+}
+
+const SpotifyPlayer: React.FC<SpotifyPlayerProps> = ({
+  clientId,
+  clientSecret,
+  playlistId,
+  theme = 'dark',
+  centeredPreview = false,
+}) => {
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState<number>(0);
+  const [accessToken, setAccessToken] = useState<string>("");
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+
+  const themeStyles = {
+    container: theme === 'dark'
+      ? 'bg-neutral-900/95 text-white border-white/10'
+      : 'bg-white/95 text-gray-900 border-gray-200',
+    // ... rest of your existing theme styles
+  };
+
+  // ... rest of your existing logic
+
+  return (
+    <div className={\`\${centeredPreview ? "relative mx-auto my-5 w-full max-w-md" : "fixed bottom-2 left-2 right-2 sm:right-4 sm:left-auto w-full sm:max-w-sm z-50"} \${themeStyles.container} rounded-2xl shadow-xl backdrop-blur-md overflow-hidden border\`}>
+      {/* Your existing JSX */}
+    </div>
+  );
+};
+
+export default SpotifyPlayer;
+export type { SpotifyPlayerProps };`,
+    props: [
+      {
+        name: "clientId",
+        type: "string",
+        description: "Your Spotify Client ID",
+        required: true
+      },
+      {
+        name: "clientSecret", 
+        type: "string",
+        description: "Your Spotify Client Secret",
+        required: true
+      },
+      {
+        name: "playlistId",
+        type: "string", 
+        description: "Spotify Playlist ID to display",
+        required: true
+      },
+      {
+        name: "theme",
+        type: "'light' | 'dark'",
+        default: "'dark'",
+        description: "Theme variant for the player"
+      },
+      {
+        name: "centeredPreview",
+        type: "boolean",
+        default: "false", 
+        description: "Whether to center the player for preview"
+      }
+    ],
+    examples: [
+      {
+        title: "Basic Usage",
+        code: `<SpotifyPlayer
+  clientId="YOUR_CLIENT_ID"
+  clientSecret="YOUR_CLIENT_SECRET"
+  playlistId="YOUR_PLAYLIST_ID"
+  theme="dark"
+/>`,
+        description: "Basic implementation with dark theme"
+      },
+      {
+        title: "Light Theme",
+        code: `<SpotifyPlayer
+  clientId="YOUR_CLIENT_ID"
+  clientSecret="YOUR_CLIENT_SECRET"
+  playlistId="YOUR_PLAYLIST_ID"
+  theme="light"
+/>`,
+        description: "Light theme variant"
+      }
+    ]
   },
 ];
