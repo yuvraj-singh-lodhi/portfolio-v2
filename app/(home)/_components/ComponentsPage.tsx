@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { components } from "../data";
-import Navbar from "../(home)/_components/Navbar";
+import { components } from "../../data";
 
 export default function ComponentsPage() {
   return (
@@ -10,7 +9,6 @@ export default function ComponentsPage() {
       {/* Header / Navbar */}
       <div className="dark:bg-black bg-white dark:bg-grid-white/[0.05] bg-grid-black/[0.2] relative">
         <div className="max-w-7xl mx-auto p-5">
-          <Navbar  />
           <h1 className="text-4xl md:text-5xl font-bold text-white mt-10">
             My Components
           </h1>

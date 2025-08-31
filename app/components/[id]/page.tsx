@@ -69,7 +69,7 @@ export default function ComponentDetailPage() {
       {/* Header */}
       <div className="dark:bg-black bg-white dark:bg-grid-white/[0.05] bg-grid-black/[0.2] relative">
         <div className="max-w-7xl mx-auto p-5 ">
-          <Navbar isFooter={false} />
+          <Navbar  />
         </div>
       </div>
 
@@ -244,13 +244,6 @@ export default function ComponentDetailPage() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-200 dark:border-zinc-800 mt-20">
-        <div className="max-w-6xl mx-auto px-4 py-8">
-          <Navbar isFooter={true} className="flex-col gap-4" />
-        </div>
-      </footer>
     </div>
   );
 }

@@ -15,9 +15,9 @@ export const InstallationSection: React.FC<InstallationSectionProps> = ({
 }) => {
   const packageManagers = [
     { name: "npm", command: `npm install ${packageName}` },
-    { name: "yarn", command: `yarn add ${packageName}` },
-    { name: "pnpm", command: `pnpm add ${packageName}` },
-    { name: "bun", command: `bun add ${packageName}` },
+    // { name: "yarn", command: `yarn add ${packageName}` },
+    // { name: "pnpm", command: `pnpm add ${packageName}` },
+    // { name: "bun", command: `bun add ${packageName}` },
   ];
 
   return (

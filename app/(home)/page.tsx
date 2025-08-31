@@ -1,3 +1,4 @@
+import ComponentsPage from "./_components/ComponentsPage";
 import HeroSection from "./_components/HeroSection";
 import Navbar from "./_components/Navbar";
 import Projects from "./_components/Projects";
@@ -12,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen bg-black space-y-20 overflow-hidden">
       <div className="dark:bg-black bg-white dark:bg-grid-white/[0.05] bg-grid-black/[0.2] relative">
         <div className="max-w-7xl mx-auto p-5 ">
-          <Navbar isFooter={false} />
+          <Navbar />
           <HeroSection />
         </div>
       </div>
@@ -20,9 +21,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto p-5">
         <Skills />
         <Projects />
-        <div className="border-t mt-10">
-          <Navbar isFooter={true} className="flex-col gap-4" />
-        </div>
+        <ComponentsPage/>
       </div>
       <SpotifyPlayer
         clientId={CLIENT_ID}
