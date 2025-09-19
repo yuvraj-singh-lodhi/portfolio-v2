@@ -21,19 +21,6 @@ const ContactDropdown = () => {
 
       {open && (
         <div className="absolute mt-2 w-64 origin-top-right rounded-lg bg-neutral-900 shadow-lg ring-1 ring-black/10 focus:outline-none p-4 space-y-3">
-          <a
-            href="mailto:yuvrajsinghlodhi30@gmail.com?subject=Let's%20Connect&body=Hi%20Yuvraj%2C%20I%20wanted%20to%20reach%20out%20about..."
-            className="flex items-center gap-3 text-white hover:text-green-400 transition"
-          >
-            <MdEmail size={20} /> Email
-          </a>
-          <Link
-            href="https://github.com/yuvraj-singh-lodhi"
-            target="_blank"
-            className="flex items-center gap-3 text-white hover:text-green-400 transition"
-          >
-            <SiGithub size={20} /> GitHub
-          </Link>
           <Link
             href="https://www.linkedin.com/in/yuvrajsinghlodhi/"
             target="_blank"

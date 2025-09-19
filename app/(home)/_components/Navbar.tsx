@@ -27,7 +27,7 @@ export const Navbar: React.FC<{ className?: string }> = ({ className }) => {
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2 z-50">
         <h1 className="text-2xl font-bold text-white hover:text-green-400 transition">
-          Yuvraj Singh Lodhi
+          YL
         </h1>
       </Link>
 

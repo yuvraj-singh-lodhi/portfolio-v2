@@ -1,3 +1,4 @@
+import { AirVent } from "lucide-react";
 import { BiSolidEnvelope } from "react-icons/bi";
 
 // data.ts
@@ -31,6 +32,16 @@ export interface ComponentInfo {
     preview?: React.ReactNode;
   }>;
 }
+export type ExperienceItem = {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  type?: string;
+  description?: string[];
+  skills?: string[];
+  isCurrent?: boolean;
+};
 
 
 import {
@@ -123,13 +134,13 @@ export const skillsCommand = [
 
 export const projectsCommand = [
   {
-    title: "The Fortress in Pixels",
-    tech: [SiNextdotjs, SiCsharp, SiDotnet, SiPostgresql],
-    link: "",
-    cover: "",
-    background: "bg-purple-800",
+    title: "Career Ai chat ",
+    tech: [SiNextdotjs, SiTailwindcss, SiPrisma, SiPostgresql],
+    link: "https://career-chat-ai-beta.vercel.app/",
+    cover: "/Career-Ai-Chat.png",
+    background: "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500",
     description:
-      "A digital asset management system showcasing historical landmarks. Built with ASP.NET Core and Next.js, featuring secure REST APIs and PostgreSQL integration.",
+      "Career Chat AI Beta is an AI-powered career assistant that acts like your personal co-pilot — it offers tailored career advice, helps you prepare for interviews, and lets you explore new professional opportunities in a conversational way.",
   },
   {
     title: "BlackWilbur",
@@ -148,6 +159,16 @@ export const projectsCommand = [
     background: 'bg-[#4D2C5E]',
     description:
       "A high-converting and responsive landing page built with React (Vite), TypeScript, Tailwind CSS, and GSAP animations. Features smooth micro-interactions and a custom demo booking form integrated with EmailJS, improving engagement and automating 100+ monthly confirmations.",
+  },
+  
+  {
+    title: "Auto Responder",
+    tech: [SiCsharp, SiDotnet, SiMicrosoftsqlserver, SiGmail, TbApi],
+    link: "",
+    cover: "/default-image.png",
+    background: "bg-stone-400",
+    description:
+      "Developed a robust background service using .NET Worker Services to automate Gmail email processing. The system efficiently handles 10,000+ emails daily, parses and extracts critical information, and securely stores it in SQL Server to streamline customer support workflows",
   },
   {
   title: 'ClientConnect CRM Suite',
@@ -193,15 +214,6 @@ export const projectsCommand = [
     background: "bg-stone-400",
     description:
       "A productivity-enhancing VS Code extension that provides React and TypeScript code snippets to speed up development.",
-  },
-  {
-    title: "Auto Responder",
-    tech: [SiCsharp, SiDotnet, SiMicrosoftsqlserver, SiGmail, TbApi],
-    link: "",
-    cover: "/default-image.png",
-    background: "bg-stone-400",
-    description:
-      "A background service that connects to Gmail API, processes 10K+ emails monthly, and stores data into SQL Server. Built with .NET Worker Services.",
   },
 ];
 
@@ -426,5 +438,55 @@ export type { SpotifyPlayerProps };`,
       { title: "Basic Usage", code: `<SpotifyPlayer clientId="YOUR_CLIENT_ID" clientSecret="YOUR_CLIENT_SECRET" playlistId="YOUR_PLAYLIST_ID" theme="dark" />`, description: "Basic implementation with dark theme" },
       { title: "Light Theme", code: `<SpotifyPlayer clientId="YOUR_CLIENT_ID" clientSecret="YOUR_CLIENT_SECRET" playlistId="YOUR_PLAYLIST_ID" theme="light" />`, description: "Light theme variant" }
     ]
+  },
+];
+
+export const experiences: ExperienceItem[] = [
+  {
+    id: "1",
+    company: "Sumati IO",
+    role: "Full-Stack Developer",
+    period: "Feb 2024 – Present",
+    type: "Internship",
+    description: [
+      "Engineered 4+ scalable web modules using .NET Core & ASP.NET MVC, improving performance by 25%.",
+      "Built background services to automate Gmail extraction, processing 10,000+ emails monthly into MySQL.",
+      "Designed and integrated 12+ REST APIs using Entity Framework Core, reducing data fetch latency by 30%.",
+      "Participated in 6 Agile sprints, delivering full-stack features on time with 95% sprint goal achievement.",
+      "Collaborated closely with the team to streamline customer support automation using Semantic Kernel."
+    ],
+    skills: [".NET", "C#", "ASP.NET Core", "Entity Framework", "MySQL", "Gmail API", "Agile", "Semantic Kernel"],
+    isCurrent: true,
+  },
+  {
+    id: "2",
+    company: "Yuganetra",
+    role: "Open Source Contributor",
+    period: "Nov 2023 – Present",
+    type: "Open Source",
+    description: [
+      "Developed and optimized React.js user interfaces for open-source and freelance projects.",
+      "Merged 15+ pull requests and addressed 20+ GitHub issues with a team of 5 contributors.",
+      "Contributed to a full-stack e-commerce platform handling 500+ daily active users.",
+      "Implemented responsive and modular UI components, improving front-end maintainability.",
+      "Enhanced project documentation and onboarding guides for contributors."
+    ],
+    skills: ["React.js", "TypeScript", "UI Development", "Open Source", "Git", "Collaboration"],
+    isCurrent: true,
+  },
+  {
+    id: "3",
+    company: "Persistent Systems",
+    role: "Martian Program Intern",
+    period: "Aug 2023 – Sep 2023",
+    type: "Internship",
+    description: [
+      "Completed 20+ hours of structured training on Java, OOP, Linux, and DBMS.",
+      "Applied programming concepts in 30+ hours of hands-on projects and exercises.",
+      "Developed small-scale Java applications implementing OOP principles.",
+      "Gained practical experience in database operations with MySQL.",
+      "Learned to work with Linux command-line tools for development and testing."
+    ],
+    skills: ["Java", "Linux", "DBMS", "OOP", "MySQL", "Problem Solving"],
   },
 ];
