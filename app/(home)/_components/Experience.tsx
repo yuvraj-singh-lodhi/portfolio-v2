@@ -3,13 +3,16 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { experiences, ExperienceItem } from "@/app/data";
+import Title from "./Title";
 
 export default function Experience(): JSX.Element {
   return (
-    <section className=" px-6 sm:px-12 bg-black relative z-0">
-      <h2 className="text-white text-3xl sm:text-4xl font-extrabold mb-8 text-center sm:text-left">
-        Experience
-      </h2>
+    <section className="py-12 px-6 sm:px-12 bg-black relative z-0">
+      {/* Title same as Skills */}
+      <Title
+        text="Experience"
+        className="flex flex-col items-start justify-start text-left mb-6 text-white text-2xl sm:text-3xl font-extrabold"
+      />
 
       <div className="relative border-l-2 border-gray-700/40 pl-6 space-y-8">
         {experiences.map((exp) => (
